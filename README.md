@@ -158,3 +158,15 @@ print(countSubSet([10,20,15],25))
 print(countSubSet([10,5,2,3,6],8))
 print(countSubSet([1,2,39],4))
 ```
+
+#### Question-9
+Given number is power of 2 or not
+Input:256
+Output:Return True
+```python
+def isPowerof2(n):
+    if n==1:return True
+    if n%2!=0 or n<=0:return False
+    return isPowerof2(n//2)
+print(isPowerof2(257))
+```

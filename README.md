@@ -160,8 +160,8 @@ print(countSubSet([1,2,39],4))
 ```
 
 #### Question-9
-Given number is power of 2 or not
-Input:256
+Given number is power of 2 or not<br>
+Input:256<br>
 Output:Return True
 ```python
 def isPowerof2(n):
@@ -172,8 +172,8 @@ print(isPowerof2(257))
 ```
 
 #### Question-10
-Find all possible combination of number from a given array that sum is target
-Input:nums=[2,3,5] target=8
+Find all possible combination of number from a given array that sum is target<br>
+Input:nums=[2,3,5] target=8<br>
 Output:[[2,2,2,2],[2,3,3],[3,5]]
 ```python
 ans=[]

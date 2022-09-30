@@ -398,3 +398,26 @@ candidates=[10,1,2,7,6,1,5]
 target=8
 print(combinationSum2(candidates,target))
 ```
+
+#### Question-17
+Given an array nums of distinct integers, return all the possible permutations.<br>
+You can return the answer in any order.<br>
+Input:nums=[1,2,3]<br>
+Output:[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+```python
+def permute(nums):
+    def solve(nums,i,l,result):
+        if i+1==l:
+            result.append([m for m in nums])
+            return
+        for p in range(i,l):
+            nums[i],nums[p]=nums[p],nums[i]
+            solve(nums,i+1,l,result)
+            nums[i],nums[p]=nums[p],nums[i]
+    result=[]
+    l=len(nums)
+    solve(nums,0,l,result)
+    return result
+nums=[1,2,3]
+print(permute(nums))
+```

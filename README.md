@@ -366,3 +366,35 @@ stack=[]
 solve(h_map,stack,digits,len(digits),0,result)
 print(result)
 ```
+
+#### Question-16
+Given a collection of candidate numbers (candidates) and a target number (target),<br>
+find all unique combinations in candidates where the candidate numbers sum to target.<br>
+Each number in candidates may only be used once in the combination.<br>
+Note: The solution set must not contain duplicate combinations.<br>
+
+Input:arr=[10,1,2,7,6,1,5] target=8<br>
+Output:[[1,1,6],[1,2,5],[1,7],[2,6]]
+```python
+def combinationSum2(candidates,target):
+    def solve(result,stack,c,candidates,target,l):
+        if target==0:
+            result.append([m for m in stack])
+            return
+        if c==l:return
+        for i in range(c,l):
+            if i>c and candidates[i]==candidates[i-1]:continue
+            if target-candidates[i]>=0:
+                stack.append(candidates[i])
+                solve(result,stack,i+1,candidates,target-candidates[i],l)
+                stack.pop()
+    result=[]
+    stack=[]
+    candidates.sort()
+    l=len(candidates)
+    solve(result,stack,0,candidates,target,l)
+    return result
+candidates=[10,1,2,7,6,1,5]
+target=8
+print(combinationSum2(candidates,target))
+```
